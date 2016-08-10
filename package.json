@@ -1,0 +1,22 @@
+{
+  "name": "agenda",
+  "version": "1.0.0",
+  "description": "agenda angularjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "miguel angel bautista",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "country-list": "0.0.3",
+    "lodash": "^4.14.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-6to5": "^3.0.0"
+  }
+}
