@@ -1,0 +1,65 @@
+default-color=#0e9f9f
+hover-color=#2584e1
+item-color=#daedff
+body
+  font-family 'Roboto', sans-serif
+a
+  color default-color
+  &:hover
+    color hover-color
+h1
+  padding 20px
+  text-align left
+ul
+  list-style none
+  margin 0 !important
+  padding: 0
+#view-container
+  position absolute
+  text-align: center
+  top 0
+  bottom 0
+  left 0
+  right 0
+  margin auto
+  width: 450px
+  height: 80vh
+  box-shadow 5px 4px 10px 0px #aaa
+  footer
+    width 100%
+    position absolute
+    bottom: 20px
+
+.viewList #view-container
+  header
+    overflow: auto
+    .btn-title
+      float right
+      line-height: 60px
+      padding-right: 1em
+      padding-top: .5em
+    h1
+      float left
+      margin-top: 0
+  section.list-wrapper
+    overflow: hidden
+    height: 55vh
+    padding-left: 1.2em
+    padding-right: 1.2em
+    li
+      background-color: item-color
+      border-radius: 8px
+      margin-bottom: .5em
+      padding:.8em
+      text-align: left
+      overflow: auto
+      box-shadow: inset -2px -2px 1px 0 rgba(220,220,220,.8)
+      .contact-data
+        float left
+        padding-top: .4em
+        max-width: 75%
+      .contact-mail
+        float right
+        .btn-edit
+          font-size: 1.8em
+          margin-right: 5px

@@ -1,0 +1,28 @@
+<header>
+    <h1>List</h1>
+    <a ng-click="listController.form('new')" class="btn-squad btn-title">
+        <i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>
+    </a>
+</header>
+<section class="list-wrapper">
+    <ul>
+        <li ng-repeat="contact in contacts">
+            <div class="contact-data">
+                {{contact.name}} {{contact.last_name}}-{{contact.country}}
+            </div>
+            <div class="contact-mail">
+                <a title="Edit" class="btn-edit" ng-click="listController.form(contact.id)">
+                    <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a href="mailto:{{contact.email}}" class="btn_mail">
+                    <i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
+            </div>
+        </li>
+    </ul>
+</section>
+<footer>
+    <a class="mouse-down" ng-mousedown="listController.mouseDown(2)" ng-mouseup="listController.mouseUp()">
+        <i class="fa fa-chevron-circle-down fa-2x" aria-hidden="true"></i></a>
+    <a class="mouse-up" ng-mousedown="listController.mouseDown(-2)" ng-mouseup="listController.mouseUp()">
+        <i class="fa fa-chevron-circle-up fa-2x" aria-hidden="true"></i></a>
+
+</footer>
