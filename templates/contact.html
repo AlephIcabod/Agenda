@@ -1,7 +1,37 @@
 <header>
-    <h1>contact</h1>
+    <h1>Contact</h1>
+    <a href="/#/" class="btn-squad btn-title">
+        <i class="fa fa-list fa-2x" aria-hidden="true"></i>
+    </a>
 </header>
-
-<footer>
-    botones
-</footer>
+<section>
+    <form id="contact-form" name="form" novalidate>
+        <div class="form-group">
+            <input type="text" placeholder="Name" max-length=30 name="name" ng-model="contactController.currentContact.name" required>
+            <p ng-show="form.name.$error.required && form.name.$touched" class="error">This field is required</p>
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Last name" max-length=30 name="lastName" ng-model="contactController.currentContact.last_name" required>
+            <p ng-show="form.lastName.$error.required && form.lastName.$touched" class="error">This field is required</p>
+        </div>
+        <div class="form-group">
+            <input type="email" placeholder="email" name="email" ng-model="contactController.currentContact.email" required>
+            <p ng-show="form.email.$error.required && form.email.$touched" class="error">This field is required</p>
+            <p ng-show="form.email.$error.email && form.email.$touched" class="error">You must introduce a valid mail</p>
+        </div>
+        <div class="select-wrap">
+            <select name="country" ng-model="contactController.currentContact.country" required>
+                <option disabled selected> Select a country</option>
+                <option ng-repeat="code in contactController.countries.getCodes()" value="{{code}}">
+                  {{contactController.countries.getName(code)}}
+                </option>
+            </select>
+        </div>
+        <p ng-show="form.country.$error.required && form.country.$touched" class="error">This field is required</p>
+        <div class="buttons">
+            <button ng-show="contactController.nuevo && form.$valid" name="add-btn" ng-click="contactController.add()">Add<i class="fa fa-floppy-o"></i></button>
+            <button ng-show="!contactController.nuevo && form.$valid" name="edit-btn" ng-click="contactController.update()">Edit<i class="fa fa-pencil"></i></button>
+            <button ng-show="!contactController.nuevo" name="delete-btn" ng-click="contactController.delete()">Delete<i class="fa fa-trash"></i></button>
+        </div>
+    </form>
+</section>
